@@ -2,19 +2,12 @@ package com.example.preatec
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.preatec.databinding.ActivityWmenuBinding
-import com.google.android.material.navigation.NavigationView
 
 class Wmenu : AppCompatActivity() {
     private val binding: ActivityWmenuBinding by lazy {
@@ -41,6 +34,8 @@ class Wmenu : AppCompatActivity() {
             onNavigationItemSelected(it)
             true
         }
+
+
     }
 
     override fun onBackPressed(){
@@ -86,13 +81,15 @@ class Wmenu : AppCompatActivity() {
             }
             R.id.menu_agenda-> {
                 binding.mtToolbar.setTitle(R.string.menu_agenda)
-                message = "Menu Agenda"
+                message = "Menu Agenda "
                 loadFragment(CallFragment.newInstance(android.R.color.holo_red_dark))
             }
         }
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         binding.drawerLayout.closeDrawer(GravityCompat.START)
     }
+
+
 
     private fun loadFragment(fragment: Fragment?) {
         supportFragmentManager

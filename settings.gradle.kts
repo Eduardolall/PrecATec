@@ -16,8 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { setUrl("https://jitpack.io") } // add this line
     }
 }
 
-rootProject.name = "PreATec"
+rootProject.name = "PrecATec"
 include(":app")
